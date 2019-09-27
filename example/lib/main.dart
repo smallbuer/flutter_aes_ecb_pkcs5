@@ -27,21 +27,22 @@ class _MyAppState extends State<MyApp> {
     int count = 0;
     for(int i=0;i<100;i++){
 
-      var dd = "{\"endDate\":\"2019-09-22\",\"startDate\":\"2019-09-22\",\"username\":\"helloword\"}";
+      var data = "{\"username\":\"helloword\"}";
 
+      //生成16字节的随机密钥
       var key = await FlutterAesEcbPkcs5.generateDesKey(128);
 
       print(key);
+      //加密
+      var encryptText = await FlutterAesEcbPkcs5.encryptString(data, key);
 
-      platformVersion = await FlutterAesEcbPkcs5.encryptString(dd, key);
+      print(encryptText);
+      //解密
+      var decryptText  = await FlutterAesEcbPkcs5.decryptString(encryptText, key);
 
-      print(platformVersion);
+      print(decryptText);
 
-      String decryptStr  = await FlutterAesEcbPkcs5.decryptString(platformVersion, key);
-
-      print(decryptStr);
-
-      if(decryptStr == dd){
+      if(decryptText == data){
         count ++;
       }
 

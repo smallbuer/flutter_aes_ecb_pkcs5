@@ -16,20 +16,20 @@ import 'package:flutter_aes_ecb_pkcs5/flutter_aes_ecb_pkcs5.dart';
 
 void main() {
 
-      var dd = "{\"endDate\":\"2019-09-22\",\"startDate\":\"2019-09-22\",\"username\":\"helloword\"}";
-
-      var key = await FlutterAesEcbPkcs5.generateDesKey(128);
-
-      print(key);
-
-      platformVersion = await FlutterAesEcbPkcs5.encryptString(dd, key);
-
-      print(platformVersion);
-
-      String decryptStr  = await FlutterAesEcbPkcs5.decryptString(platformVersion, key);
-
-      print(decryptStr);
-  
+    var data = "{\"username\":\"helloword\"}";
+    
+    //生成16字节的随机密钥
+    var key = await FlutterAesEcbPkcs5.generateDesKey(128);
+    
+    print(key);
+    //加密
+    var encryptText = await FlutterAesEcbPkcs5.encryptString(data, key);
+    
+    print(encryptText);
+    //解密
+    var decryptText  = await FlutterAesEcbPkcs5.decryptString(encryptText, key);
+    
+    print(decryptText);
   
 }
 ```
