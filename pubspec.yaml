@@ -1,6 +1,6 @@
 name: flutter_aes_ecb_pkcs5
-description: A flutter plugin, a library dedicated to aes_ecb_pkcs5 encryption and decryption, it has high performance and a simple API, small size and stable operation, you can use it with confidence;
-version: 0.1.0
+description: A flutter plugin, a library dedicated to aes_ecb_pkcs5 encryption and decryption, it has high performance and a simple API, small size and stable operation;
+version: 0.1.1
 author: smallbuer <smallbuer@gmail.com>
 homepage: https://github.com/smallbuer/flutter_aes_ecb_pkcs5.git
 
