@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * update readme and Code comment.
+
+## 0.1.0
+* update readme and Code comment and description.
+* its release.
