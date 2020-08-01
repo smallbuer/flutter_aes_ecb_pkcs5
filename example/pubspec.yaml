@@ -17,6 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+#  flutter_aes_ecb_pkcs5: ^0.1.1
   flutter_aes_ecb_pkcs5:
     path: ../
 

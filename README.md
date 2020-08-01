@@ -62,6 +62,14 @@ void main() {
 }
 ```
 
+#### Run Example Result
+```
+data:{"username":"helloword"}
+create key:DA8FD2693B652D587EEE51E7ADD9DBB8
+encryptText :851544E224F6C1C7F560AB82889DE0DF66EEB6762AB836F4EE13E31100F0EA16
+decryptText :{"username":"helloword"}
+```
+
 #### License
 
 The MIT License(http://opensource.org/licenses/MIT)
