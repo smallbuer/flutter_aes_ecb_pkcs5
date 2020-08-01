@@ -22,39 +22,36 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
+    String pkcs5Progress;
 
-    int count = 0;
-    for(int i=0;i<100;i++){
+    //string format
+    var data = "{\"username\":\"helloword\"}";
 
-      var data = "{\"username\":\"helloword\"}";
+    //create 16 byte random key
+    var key = await FlutterAesEcbPkcs5.generateDesKey(128);
 
-      //生成16字节的随机密钥
-      var key = await FlutterAesEcbPkcs5.generateDesKey(128);
+    print(key);
+    //encrypt
+    var encryptText = await FlutterAesEcbPkcs5.encryptString(data, key);
 
-      print(key);
-      //加密
-      var encryptText = await FlutterAesEcbPkcs5.encryptString(data, key);
+    print(encryptText);
+    //decrypt
+    var decryptText  = await FlutterAesEcbPkcs5.decryptString(encryptText, key);
 
-      print(encryptText);
-      //解密
-      var decryptText  = await FlutterAesEcbPkcs5.decryptString(encryptText, key);
+    print(decryptText);
 
-      print(decryptText);
+    pkcs5Progress = "data:"+data +"\n"+
+        "create key:"+key +"\n"
+        +"encryptText :"+encryptText +"\n"
+        +"decryptText :"+decryptText +"\n";
 
-      if(decryptText == data){
-        count ++;
-      }
-
-    }
-    platformVersion = count.toString()+"\n";
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
+      _platformVersion = pkcs5Progress;
     });
   }
 
@@ -63,10 +60,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('flutter_aes_ecb_pkcs5'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Text('pkcs5Progress:\n $_platformVersion\n'),
         ),
       ),
     );
