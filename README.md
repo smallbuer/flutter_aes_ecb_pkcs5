@@ -14,7 +14,7 @@ Add this to your package's pubspec.yaml file:
 
 ```
 dependencies:
-  flutter_aes_ecb_pkcs5: ^0.1.1
+  flutter_aes_ecb_pkcs5: ^0.1.2
 ```
 
 2. Install it You can install packages from the command line:
