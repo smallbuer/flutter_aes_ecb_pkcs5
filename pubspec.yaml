@@ -1,11 +1,11 @@
 name: flutter_aes_ecb_pkcs5
 description: A flutter plugin, a library dedicated to aes_ecb_pkcs5 encryption and decryption, it has high performance and a simple API, small size and stable operation;
-version: 0.1.1
-author: smallbuer <smallbuer@gmail.com>
+version: 0.1.2
 homepage: https://github.com/smallbuer/flutter_aes_ecb_pkcs5.git
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -14,6 +14,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  test: ^1.17.12
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -25,8 +26,12 @@ flutter:
   # be modified. They are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
   plugin:
-    androidPackage: com.smallbuer.flutter_aes_ecb_pkcs5
-    pluginClass: FlutterAesEcbPkcs5Plugin
+    platforms:
+      android:
+        package: com.smallbuer.flutter_aes_ecb_pkcs5
+        pluginClass: FlutterAesEcbPkcs5Plugin
+      ios:
+        pluginClass: FlutterAesEcbPkcs5Plugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

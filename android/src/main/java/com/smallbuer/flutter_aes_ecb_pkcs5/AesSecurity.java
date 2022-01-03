@@ -65,9 +65,6 @@ public class AesSecurity {
      * @return
      */
     private static String parseByte2HexStr(byte buf[]) {
-
-
-
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < buf.length; i++) {
             String hex = Integer.toHexString(buf[i] & 0xFF);
@@ -77,7 +74,6 @@ public class AesSecurity {
             sb.append(hex.toUpperCase());
         }
         return sb.toString();
-		
     }
 	
 	/**
@@ -106,17 +102,13 @@ public class AesSecurity {
 	 * @return String
      */
 	public String decrypt(String input, String key){
-
 		byte[] decodeKey = Hex.decode(key);
-
 		byte[] output = null;
-		
 		try{
 			SecretKeySpec skey = new SecretKeySpec(decodeKey, ALGORITHM);
 			Cipher cipher = Cipher.getInstance(TRANSFORMATION);
 			cipher.init(Cipher.DECRYPT_MODE, skey);
 			output = cipher.doFinal(parseHexStr2Byte(input));
-
 		}catch(Exception e){
 			System.out.println(e.toString());
 		}

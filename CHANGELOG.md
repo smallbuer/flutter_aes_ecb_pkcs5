@@ -12,3 +12,8 @@
 
 ## 0.1.1
 * change description.
+
+## 0.1.2
+* update Flutter SDK is 2.x.
+* support null safety
+* update android gradle version 4.x
