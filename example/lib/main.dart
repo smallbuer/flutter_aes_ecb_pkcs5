@@ -30,19 +30,20 @@ class _MyAppState extends State<MyApp> {
     var key = await FlutterAesEcbPkcs5.generateDesKey(128);
 
     print(key);
+
     //encrypt
-    var encryptText = await FlutterAesEcbPkcs5.encryptString(data, key);
+    var encryptText = await FlutterAesEcbPkcs5.encryptString(data,key!);
 
     print(encryptText);
     //decrypt
-    var decryptText  = await FlutterAesEcbPkcs5.decryptString(encryptText, key);
+    var decryptText  = await FlutterAesEcbPkcs5.decryptString(encryptText!, key);
 
     print(decryptText);
 
     pkcs5Progress = "data:"+data +"\n"+
         "create key:"+key +"\n"
         +"encryptText :"+encryptText +"\n"
-        +"decryptText :"+decryptText +"\n";
+        +"decryptText :"+decryptText! +"\n";
 
     print(pkcs5Progress);
     // If the widget was removed from the tree while the asynchronous platform

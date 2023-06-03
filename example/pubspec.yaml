@@ -3,7 +3,7 @@ description: Demonstrates how to use the flutter_aes_ecb_pkcs5 plugin.
 
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=3.0.3 <4.0.0'
 
 dependencies:
   flutter:

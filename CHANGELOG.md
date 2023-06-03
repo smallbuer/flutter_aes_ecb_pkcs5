@@ -17,3 +17,8 @@
 * update Flutter SDK is 2.x.
 * support null safety
 * update android gradle version 4.x
+
+## 0.1.3
+* update Flutter SDK is 3.x.
+* support null safety
+* update android gradle version 7.x
